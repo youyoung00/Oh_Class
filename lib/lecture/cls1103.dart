@@ -1,10 +1,19 @@
 import 'dart:math';
 
 void main() {
-  Cleric cleric = Cleric(name: "유신환", hp: 50, mp: 1);
+  Cleric cleric = Cleric(name: "성직자", hp: 50, mp: 10);
+  cleric.hp = cleric.hp - 10;
 
-  print("현재 mp는 ${cleric.mp}입니다");
-  print("pray 사용!! 현재 mp는 ${cleric.pray(3)}입니다");
+  print('****공격당함!! 현재 hp는 ${cleric.hp}으로 떨어졌습니다.');
+  print(cleric.introduce());
+
+  cleric.selfAid();
+  print('\n****selfAid 사용!!');
+  print(cleric.introduce());
+
+  cleric.pray(30);
+  print('\n****pray 사용!!');
+  print(cleric.introduce());
 }
 
 class Cleric {
@@ -23,12 +32,20 @@ class Cleric {
   }
 
   int pray(int sec) {
-    num sec1 = sec / 3;
-    int sec1Int = sec1.toInt();
 
-    int UpPoint = 3 + Random().nextInt(6 - 3);
-    int plusMpPoint = UpPoint * sec1Int;
-    int finalMp = plusMpPoint + mp;
+    int maxUpPoint;
+    int minUpPoint;
+
+    if(sec >= 3){
+      maxUpPoint = sec + 3;
+      minUpPoint = sec;
+    } else {
+      maxUpPoint = sec + 2;
+      minUpPoint = 0;
+    }
+
+    int UpPoint = minUpPoint + Random().nextInt(maxUpPoint - minUpPoint);
+    int finalMp = UpPoint + mp;
 
     if (finalMp > maxMp) {
       finalMp = maxMp;
@@ -36,10 +53,11 @@ class Cleric {
       finalMp;
     }
 
-    return finalMp;
+    mp = finalMp;
+    return mp;
   }
 
   String introduce() {
-    return '$hp, $mp';
+    return '현재 $name는 hp: $hp, mp: $mp 입니다.';
   }
 }
