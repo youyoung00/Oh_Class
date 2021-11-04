@@ -21,14 +21,10 @@ class Cleric {
   Cleric({this.name, this.hp, this.mp});
 
   void selfAid() {
-    if (this.hp >= this.maxHp) {
+    if (this.hp > this.maxHp) {
       return;
-    } else if (this.hp > 45) {
-      return;
-    } else {
-      this.mp -= 5;
     }
-
+    mp = mp - 5;
     hp = maxHp;
   }
 }
