@@ -23,7 +23,7 @@ void main() {
 }
 
 class AlphabetNum {
-  Map<String, dynamic> alphabets = {
+  Map<String, int> alphabets = {
     'A': 1,
     'B': 2,
     'C': 3,
