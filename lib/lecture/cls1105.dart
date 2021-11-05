@@ -18,24 +18,17 @@ class Word {
   bool isVowel(int i) {
     bool result = true;
 
-    List<String> vowel = ['a', 'i', 'u', 'e', 'o'];
-
-    if (letters.substring(i, i + 1) == vowel[i]) {
-      result;
-    } else {
-      result = false;
-    }
-      // if (letters.substring(i, i + 1) == 'a' ||
-      //     letters.substring(i, i + 1) == 'i') {
-      //   result;
-      // } else if (letters.substring(i, i + 1) == 'u' ||
-      //     letters.substring(i, i + 1) == 'e') {
-      //   result;
-      // } else if (letters.substring(i, i + 1) == 'o') {
-      //   result;
-      // } else {
-      //   result = false;
-      // }
+      if (letters.substring(i, i + 1) == 'a' ||
+          letters.substring(i, i + 1) == 'i') {
+        result;
+      } else if (letters.substring(i, i + 1) == 'u' ||
+          letters.substring(i, i + 1) == 'e') {
+        result;
+      } else if (letters.substring(i, i + 1) == 'o') {
+        result;
+      } else {
+        result = false;
+      }
 
       return result;
   }
