@@ -16,6 +16,7 @@
 void main() {
   AlphabetNum alphabetNum = AlphabetNum();
   print(alphabetNum.counter('C'));
+  print(alphabetNum.counter('X'));
   print(alphabetNum.counter('A'));
   print(alphabetNum.counter('F'));
   print(alphabetNum.counter('G'));
@@ -52,7 +53,7 @@ class AlphabetNum {
     'Z': 26
   };
 
-  counter(String a) {
+  int counter(String a) {
     return alphabets[a];
   }
 }
