@@ -20,12 +20,10 @@ void main() {
   print(goodNumCut.numReader(6666666666666666666));
   print(goodNumCut.numReader(444567454));
   print(goodNumCut.numReader(00000000000000));
-
 }
 
 class GoodNumCut {
   String numReader(int n) {
-
     // 같은 숫자 인지 판단.
     bool isSameNum = true;
 
