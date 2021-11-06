@@ -26,6 +26,7 @@
 import 'dart:math';
 
 void main() {
+
   InputInt inputInt = InputInt();
   inputInt.inputFunc(9, 12, 3, 6, 10);
 }
@@ -37,4 +38,6 @@ class InputInt {
     print(inputList.reduce(max));
     print(inputList.reduce(min));
   }
+
+
 }
