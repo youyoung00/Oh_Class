@@ -20,7 +20,9 @@
 
 void main() {
   ArithmeticSequence arithmeticSequence = ArithmeticSequence();
-  print(arithmeticSequence.count(1, 3));
+  arithmeticSequence.count(3, 3);
+  arithmeticSequence.count(5, 10);
+  arithmeticSequence.count(1, 3);
 }
 
 class ArithmeticSequence {
