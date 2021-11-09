@@ -17,3 +17,18 @@
 //
 // 1 3
 // 1 4 7 10 13 16 19 22 25 28
+
+void main() {
+  ArithmeticSequence arithmeticSequence = ArithmeticSequence();
+  print(arithmeticSequence.count(1, 3));
+}
+
+class ArithmeticSequence {
+  int count(int m, int n) {
+    print(m);
+    for (int i = 0; i < 9; i++) {
+      print(m = m + n);
+    }
+    return m;
+  }
+}
