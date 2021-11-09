@@ -38,6 +38,4 @@ class InputInt {
     print(inputList.reduce(max));
     print(inputList.reduce(min));
   }
-
-
 }
