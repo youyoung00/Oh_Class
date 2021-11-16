@@ -17,6 +17,7 @@ void main() {
   print(absolute.func(-100));
   print(absolute.func(-1));
   print(absolute.func(15));
+  print(absolute.func(-5));
 }
 
 class Absolute{
@@ -24,7 +25,6 @@ class Absolute{
   int func(int num) {
     this.num = num;
     return num.abs();
-
   }
   Absolute({int num});
 }
