@@ -1,5 +1,6 @@
 // ⭐ 짝수 홀수
-// 당신은 회사를 대표하여 2개의 숫자를 골라야 합니다. 두 수가 모두 짝수이면 홀수파(홀수를 좋아하는 사람들의 모임)가 싫어합니다. 두 수가 모두 홀수이면 짝수파가 싫어합니다. 당신 은 짝수 하나 홀수 하나를 골라서 모두를 만족시켜야 합니다.
+// 당신은 회사를 대표하여 2개의 숫자를 골라야 합니다. 두 수가 모두 짝수이면 홀수파(홀수를 좋아하는 사람들의 모임)가 싫어합니다.
+// 두 수가 모두 홀수이면 짝수파가 싫어합니다. 당신 은 짝수 하나 홀수 하나를 골라서 모두를 만족시켜야 합니다.
 // 입력
 // 입력은 다음 형식을 따릅니다
 // N M
@@ -16,3 +17,26 @@
 // 출력 예2
 // NO
 
+void main() {
+  SelectNum selectNum = SelectNum();
+  print(selectNum.oddEvenReader(16, 43));
+  print(selectNum.oddEvenReader(15, 44));
+  print(selectNum.oddEvenReader(16, 44));
+  print(selectNum.oddEvenReader(1, -2));
+}
+
+class SelectNum {
+  String oddEvenReader(int n, int m) {
+    String result = 'YES';
+
+    if (n % 2 == 0 && m % 2 == 1) {
+      result;
+    } else if (n % 2 == 1 && m % 2 == 0) {
+      result;
+    } else {
+      result = 'NO';
+    }
+
+    return result;
+  }
+}
