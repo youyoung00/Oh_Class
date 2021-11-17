@@ -53,6 +53,7 @@ class CardSearcher {
   List<int> cardList = [];
 
   void inputCards() {
+    // 카드 숫자 입력 받기 로직
     List<int> makeCardList() {
       stdout.write('c_');
       int cardNum = int.parse(stdin.readLineSync());
@@ -72,25 +73,22 @@ class CardSearcher {
       return cardList;
     }
 
-    makeCardList();
-    makeCardList();
-    makeCardList();
-    makeCardList();
+    // 카드숫자 입력 받기 호출 -> 4번
+    for (int i = 0; i < 4; i++) {
+      makeCardList();
+    }
 
+    // 부족한 카드 찾기 로직
     int cardReader() {
       int sum = 0;
-
       for (int i = 0; i < cardList.length; i++) {
         sum += cardList[i];
       }
-
       int result = 15 - sum;
-
       return result;
     }
 
-    int finalResult = cardReader();
-
-    print(finalResult);
+    // 부족한 카드 찾기 로직 실행
+    print(cardReader());
   }
 }
