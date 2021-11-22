@@ -19,16 +19,14 @@ void main() {
   print(goodNumCut.numReader(42222225));
   print(goodNumCut.numReader(6666666666666666666));
   print(goodNumCut.numReader(444567454));
-  print(goodNumCut.numReader(00000000000000));
+
 }
 
 class GoodNumCut {
   String numReader(int n) {
-    // 같은 숫자 인지 판단.
-    bool isSameNum = true;
 
     // 내보낼 결과값 담을 변수
-    String result = "";
+    String result = "No";
 
     // 숫자를 문자열로 형변환.
     String strN = n.toString();
@@ -41,18 +39,11 @@ class GoodNumCut {
 
     // 리스트의 첫번째 요소와 리스트의 전체 요소가 같은지 비교
     for (int i = 0; i < numList.length; i++) {
-      if (numList[i] == firstNum) {
-        continue;
+      if (numList[i] != firstNum) {
+        result = "No";
       } else {
-        isSameNum = false;
+        result = strN;
       }
-    }
-
-    // 출력 결과 분기
-    if (isSameNum == false) {
-      result = "NO";
-    } else {
-      result = strN;
     }
 
     return result;

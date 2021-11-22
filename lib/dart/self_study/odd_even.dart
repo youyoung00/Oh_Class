@@ -17,6 +17,37 @@
 // 출력 예2
 // NO
 
+
+
+/// 아무 것도 안하는 코드 제외하기!!!
+// class SelectNum {
+//   String oddEvenReader(int n, int m) {
+//     String result = 'YES';
+//
+//     if (n % 2 == 0 && m % 2 == 1) {
+//       result;
+//     } else if (n % 2 == 1 && m % 2 == 0) {
+//       result;
+//     } else {
+//       result = 'NO';
+//     }
+//
+//     return result;
+//   }
+// }
+
+/// 개선 코드 1
+// class SelectNum{
+//   String oddEvenReader(int n, int m){
+//     String result = 'NO';
+//
+//     if(n % 2 == 0 && m % 2 == 1 || n % 2 == 1 && m % 2 == 0){
+//       result = 'YES';
+//     }
+//     return result;
+//   }
+// }
+
 void main() {
   SelectNum selectNum = SelectNum();
   print(selectNum.oddEvenReader(16, 43));
@@ -25,18 +56,14 @@ void main() {
   print(selectNum.oddEvenReader(1, -2));
 }
 
+/// 개선 코드 2
 class SelectNum {
   String oddEvenReader(int n, int m) {
-    String result = 'YES';
+    String isOddEven = 'NO';
 
-    if (n % 2 == 0 && m % 2 == 1) {
-      result;
-    } else if (n % 2 == 1 && m % 2 == 0) {
-      result;
-    } else {
-      result = 'NO';
-    }
-
-    return result;
+    n.isEven && m.isOdd || m.isEven && n.isOdd
+        ? isOddEven = 'YES'
+        : isOddEven = 'NO';
+    return isOddEven;
   }
 }
