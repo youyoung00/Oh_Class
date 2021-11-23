@@ -53,9 +53,9 @@ void main() {
   typhoonInterval(typhoonDays);
 }
 
-void typhoonInterval(List<int> s) {
-  for (int i = 0; i < s.length; i++) {
-    int dayInterval = s[i] - s[i + 1];
+void typhoonInterval(List<int> days) {
+  for (int i = 0; i < days.length; i++) {
+    int dayInterval = days[i] - days[i + 1];
     print(dayInterval.abs());
   }
 }
