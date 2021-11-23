@@ -1,5 +1,6 @@
 // ⭐ 태풍의 간격
-// 당신은 기상청 데이터 분석가로써 태풍 상륙 간격에 대해 데이터를 만들어야 한다. 샘플로 5개의 태풍 상륙일 정보가 주어지면, 다음 태풍이 몇 일 간격으로 발생했는지 일수를 구하는 프로그램을 작성하시오.
+// 당신은 기상청 데이터 분석가로써 태풍 상륙 간격에 대해 데이터를 만들어야 한다.
+// 샘플로 5개의 태풍 상륙일 정보가 주어지면, 다음 태풍이 몇 일 간격으로 발생했는지 일수를 구하는 프로그램을 작성하시오.
 // 입력
 // 입력은 다음 형식을 따릅니다
 // d_1
@@ -39,3 +40,22 @@
 // 2
 // 19
 
+import 'dart:io';
+
+void main() {
+  List<int> typhoonDays = [];
+
+  for (int i = 0; i < 5; i++) {
+    int typhoonDay = int.parse(stdin.readLineSync());
+    typhoonDays.add(typhoonDay);
+  }
+
+  typhoonInterval(typhoonDays);
+}
+
+void typhoonInterval(List<int> s) {
+  for (int i = 0; i < s.length; i++) {
+    int dayInterval = s[i] - s[i + 1];
+    print(dayInterval.abs());
+  }
+}
