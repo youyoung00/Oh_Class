@@ -25,14 +25,14 @@
 
 import 'dart:io';
 
-void main(){
+void main() {
   String s = stdin.readLineSync();
- print(peperoCount(s));
+  print(peperoCount(s));
 }
 
-String peperoCount(String s){
+String peperoCount(String s) {
   String result = "";
-  if(s.length >= 11){
+  if (s.length >= 11) {
     result = "OK";
   } else {
     int num = 11 - s.length;
@@ -41,7 +41,3 @@ String peperoCount(String s){
 
   return result;
 }
-
-
-
-
