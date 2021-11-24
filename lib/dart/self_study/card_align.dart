@@ -42,21 +42,44 @@
 
 import 'dart:io';
 
-void main(){
-  String a = stdin.readLineSync();
-  String b = stdin.readLineSync();
-  String c = stdin.readLineSync();
-  String d = stdin.readLineSync();
+void main() {
+  Card card = Card();
+  int a = card.inputNumCheck();
+  int b = card.inputNumCheck();
+  int c = card.inputNumCheck();
+  int d = card.inputNumCheck();
 
-  print(cardAlign(a,b,c,d));
+  print(card.sumCard(a, b, c, d));
 }
 
-int cardAlign(String a, String b, String c, String d){
-  List<String> cards = [a,b,c,d];
-  cards.sort();
-  String leftCard = cards[3] + cards[1];
-  String rightCard = cards[2] + cards[0];
-  int result = int.parse(leftCard) + int.parse(rightCard);
+class Card {
+  int inputNumCheck() {
+    int num = int.parse(stdin.readLineSync());
+    String resultMsg = "입력 되었습니다";
+    int result = 0;
 
-  return result;
+    if (num <= 9 && num != 0) {
+      print(resultMsg);
+      result = num;
+    } else {
+      print(resultMsg = "1~9 사이의 숫자로 다시 입력하세요.");
+      result = inputNumCheck();
+    }
+    return result;
+  }
+
+  int sumCard(int a, int b, int c, int d) {
+    String A = a.toString();
+    String B = b.toString();
+    String C = c.toString();
+    String D = d.toString();
+
+    List<String> cards = [A, B, C, D];
+    cards.sort();
+    String leftCard = cards[3] + cards[1];
+    String rightCard = cards[2] + cards[0];
+    int result = int.parse(leftCard) + int.parse(rightCard);
+
+    return result;
+  }
 }
