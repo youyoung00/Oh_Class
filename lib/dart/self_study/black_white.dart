@@ -92,6 +92,35 @@
 // 입력 예2
 // 1 1
 // 0
-// 출력 예2 0
+// 출력 예2
+// 0
+
+import 'dart:io';
+
+void main(){
+  String hAndW = stdin.readLineSync();
+  print(blackWhite(hAndW));
+
+}
+
+List<List> blackWhite(String hAndW){
+  int h = int.parse(hAndW[0]);
+  int w = int.parse(hAndW[2]);
+  List<List> hwList = [[],[" "],[]];
+
+  for(int i = 0; i < h; i++){
+    int hNum = (int.parse(stdin.readLineSync()));
+    if(h >= 128){
+      hwList[0].add(hNum);
+      print(hwList[0]);
+    } else if(w <= 127){
+      int wNum = (int.parse(stdin.readLineSync()));
+      hwList[2].add(wNum);
+      print(hwList[2]);
+    }
+  }
+
+  return hwList;
+}
 
 
