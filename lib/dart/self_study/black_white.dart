@@ -98,27 +98,37 @@
 import 'dart:io';
 
 void main(){
-  String hAndW = stdin.readLineSync();
-  print(blackWhite(hAndW));
+  String hwCount = stdin.readLineSync();
+  List<String> hwList = [];
 
+  for(int i = 0; i < int.parse(hwCount[0]); i++){
+     hwList.add(stdin.readLineSync());
+  }
+  print(hwList);
+  // print(blackWhite(hwList)[0]);
 }
 
-List<List> blackWhite(String hAndW){
-  int h = int.parse(hAndW[0]);
-  int w = int.parse(hAndW[2]);
-  List<List> hwList = [[],[" "],[]];
+List<String> blackWhite(List<String> hwList){
 
-  for(int i = 0; i < h; i++){
-    int hNum = (int.parse(stdin.readLineSync()));
-    if(h >= 128){
-      hwList[0].add(hNum);
-      print(hwList[0]);
-    } else if(w <= 127){
-      int wNum = (int.parse(stdin.readLineSync()));
-      hwList[2].add(wNum);
-      print(hwList[2]);
-    }
+  int intH = int.parse(hwList[0][0]);
+  int intW = int.parse(hwList[0][2]);
+
+  for(int i = 0; i < hwList[0].length;);
+
+  if(intH >= 128){
+    intH = 1;
+  } else if(intH <= 127){
+    intH = 0;
   }
+
+  if(intW >= 128){
+    intW = 1;
+  } else if(intW <= 127){
+    intW = 0;
+  }
+
+  hwList[0] = intH.toString();
+  hwList[2] = intW.toString();
 
   return hwList;
 }
