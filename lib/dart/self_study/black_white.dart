@@ -80,10 +80,10 @@
 // i 라인의 j 번째 1 ≦ i ≦ W의 정수 값 B_ {i, j}는 입력 된 이미지의 i 행 j 열 번째 화소 값을 흑백화 한 결과를 나타냅니다.
 // H 라인 출력의 마지막에 개행을 넣거나, 불필요한 문자 또는 빈 행을 포함하지 마십시 오.
 // 입력 예1
-// 3 2
-// 128 127
-// 127 128
-// 128 127
+// 3 3
+// 128 127 128
+// 127 128 128
+// 128 127 128
 // 출력 예1
 
 // 1 0
@@ -97,40 +97,31 @@
 
 import 'dart:io';
 
-void main(){
-  String hwCount = stdin.readLineSync();
-  List<String> hwList = [];
+void main() {
+  List<String> hwCount = stdin.readLineSync().split(" ");
+  int h = int.parse(hwCount[0]);
 
-  for(int i = 0; i < int.parse(hwCount[0]); i++){
-     hwList.add(stdin.readLineSync());
+  List<List<int>> hLists = [];
+
+  for (int i = 0; i < h; i++) {
+    hLists
+        .add(stdin.readLineSync().split(' ').map((e) => int.parse(e)).toList());
   }
-  print(hwList);
-  // print(blackWhite(hwList)[0]);
+
+  for (int j = 0; j < h; j++) {
+    print(blackWhite(hLists[j]));
+  }
 }
 
-List<String> blackWhite(List<String> hwList){
-
-  int intH = int.parse(hwList[0][0]);
-  int intW = int.parse(hwList[0][2]);
-
-  for(int i = 0; i < hwList[0].length;);
-
-  if(intH >= 128){
-    intH = 1;
-  } else if(intH <= 127){
-    intH = 0;
+String blackWhite(hList) {
+  String result = "";
+  for (int finalNum in hList) {
+    if (finalNum >= 128) {
+      finalNum = 1;
+    } else if (finalNum <= 127) {
+      finalNum = 0;
+    }
+    result = result + '${finalNum} ';
   }
-
-  if(intW >= 128){
-    intW = 1;
-  } else if(intW <= 127){
-    intW = 0;
-  }
-
-  hwList[0] = intH.toString();
-  hwList[2] = intW.toString();
-
-  return hwList;
+  return result;
 }
-
-
